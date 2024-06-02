@@ -1,25 +1,15 @@
 ---
 slug: welcome
 title: Welcome
-authors: [slorber, yangshun]
-tags: [facebook, hello, docusaurus]
+authors: [pxuanbach]
+tags: [hello]
 ---
 
-[Docusaurus blogging features](https://docusaurus.io/docs/blog) are powered by the [blog plugin](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).
+Hello world! Như bao kỹ sư phần mềm khác, mình có sở thích viết code và tìm tòi những kỹ thuật và công nghệ mới trong ngành. Vậy nên, mình tạo blog này ra để chia sẻ những kiến thức, kinh nghiệm mà mình tích lũy được trong quá trình làm việc và học tập.
 
-Simply add Markdown files (or folders) to the `blog` directory.
+## Blog này sẽ có gì?
 
-Regular blog authors can be added to `authors.yml`.
+Hiện tại, Back-end là mảng chính mà mình đang theo đuổi. Ngoài ra, mình còn chịu trách nhiệm quản lý quy trình deploy sản phẩm và bảo trì web phía front-end.
 
-The blog post date can be extracted from filenames, such as:
+Nên nội dung chủ yếu là các chủ đề thuộc Back-end và DevOps. 
 
-- `2019-05-30-welcome.md`
-- `2019-05-30-welcome/index.md`
-
-A blog post folder can be convenient to co-locate blog post images:
-
-![Docusaurus Plushie](./docusaurus-plushie-banner.jpeg)
-
-The blog supports tags as well!
-
-**And if you don't want a blog**: just delete this directory, and use `blog: false` in your Docusaurus config.

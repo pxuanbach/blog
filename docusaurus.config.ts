@@ -65,6 +65,7 @@ const config: Config = {
       },
       items: [
         {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/about', label: 'About', position: 'left'},
         {
           href: 'https://github.com/pxuanbach',
           label: 'My GitHub',
@@ -117,8 +118,8 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} Pxuanbach Blog, Inc. Built with Docusaurus.`,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: prismThemes.jettwaveLight,
+      darkTheme: prismThemes.jettwaveDark,
     },
   } satisfies Preset.ThemeConfig,
 };
