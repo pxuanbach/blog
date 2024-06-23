@@ -4,10 +4,17 @@
  */
 
 .heroBanner {
+  flex: 1 auto;
   padding: 4rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(../../static/img/banner_bg.jpg);
+  transition: 0.3s ease-in all;
+}
+
+html[data-theme='dark'] .heroBanner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url(../../static/img/banner_bg.jpg);
 }
 
 @media screen and (max-width: 996px) {
