@@ -28,7 +28,20 @@ const config: Config = {
     defaultLocale: 'vi',
     locales: ['vi'],
   },
-
+  plugins: [
+    // Use custom blog plugin
+    [
+      './plugins/blog-plugin',
+      {
+        id: 'blog',
+        routeBasePath: 'blog',
+        path: './blog',
+        blogTitle: 'My Awesome Blog',
+        blogDescription: 'A great blog with homepage Docusaurus integration',
+        showReadingTime: true,
+      },
+    ]
+  ],
   presets: [
     [
       'classic',
@@ -40,20 +53,30 @@ const config: Config = {
           // editUrl:
           //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl:
-          //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
+        blog: false,
+        // {
+        //   showReadingTime: true,
+        //   blogSidebarTitle: 'All posts',
+        //   blogSidebarCount: 'ALL',
+        //   // feedOptions: {
+        //   //   type: 'all',
+        //   //   copyright: `Copyright © ${new Date().getFullYear()} Bach Pham, Inc. Built with Docusaurus.`,
+        //   //   createFeedItems: async (params) => {
+        //   //     const {blogPosts, defaultCreateFeedItems, ...rest} = params;
+        //   //     return defaultCreateFeedItems({
+        //   //       // keep only the 10 most recent blog posts in the feed
+        //   //       blogPosts: blogPosts.filter((item, index) => index < 10),
+        //   //       ...rest,
+        //   //     });
+        //   //   },
+        //   // },
+        // },
         theme: {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
     ],
   ],
-
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',

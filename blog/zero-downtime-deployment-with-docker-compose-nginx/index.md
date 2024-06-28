@@ -1,8 +1,10 @@
 ---
 slug: zero-downtime-deployment-with-docker-compose-nginx
-title: Zero downtime deployment with Docker Compose & Nginx
+title: Zero-downtime Deployments with Docker Compose & Nginx
 authors: [pxuanbach]
 tags: [automation, deployment, docker, docker compose, nginx]
+date: 2024-03-24T10:00
+image: zero-downtime-deployment-with-docker-compose-nginx/blue-green-deployment-with-nginx.png
 ---
 
 Hey, welcome to my blog!
@@ -10,6 +12,8 @@ Hey, welcome to my blog!
 ## Lời mở đầu
 
 Vài tháng trước, mình đã làm việc trong một dự án sử dụng Docker và Nginx để triển khai sản phẩm trên Digital Ocean Droplet. Mọi thứ vào thời điểm đó khá đơn sơ, mình phải thiết lập mọi thứ từ đầu. Từ việc dockerize ứng dụng đến tạo pipeline CI/CD để build, quản lý và triển khai các phiên bản Docker image khác nhau.
+
+<!--truncate-->
 
 Để mà nói thì, Docker là một công cụ tuyệt vời và mình thích sử dụng nó để tối ưu hóa hiệu suất làm việc của mình và team. Mình định nghĩa các Docker service trong tệp cấu hình, sau đó pull image mới, rồi down và up các container để đảm bảo chúng được cập nhật image mới. Có một vấn đề là: khi mình down và up Docker container sẽ có downtime. Tổng thời gian ngừng hoạt động khoảng **2 phút**. Đối với một sản phẩm được triển khai lên production thì đó là điều không thể chấp nhận được.
 

@@ -3,8 +3,10 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import { RecentBlogItems } from '../RecentBlogItems';
 
 import styles from './index.module.css';
+
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -27,15 +29,26 @@ function HomepageHeader() {
   );
 }
 
-export default function Home(): JSX.Element {
+export default function Home({ homePageBlogMetadata, recentPosts }): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
+  console.log({ homePageBlogMetadata, recentPosts });
+
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
-      {/* <div style={{ display: 'flex', flexDirection: 'column', height: '100%', flex: "1 0 auto"}}> */}
-        <HomepageHeader />
-      {/* </div> */}
+      <HomepageHeader />
+      <div className={styles.recentBlogsContainer}>
+        {recentPosts && recentPosts.map((post, index) => (
+          <RecentBlogItems 
+            key={index}
+            index={index}
+            metadata={post.metadata}
+            context={"home"}
+          >
+          </RecentBlogItems>
+        ))}
+      </div>
     </Layout>
   );
 }

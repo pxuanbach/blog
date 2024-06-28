@@ -2,3 +2,36 @@ hello:
   label: hello world
   permalink: /hello-world
   description: Hello world tag
+automation:
+  label: automation
+  permalink: /automation
+deployment:
+  label: deployment
+  permalink: /deployment
+docker:
+  label: docker
+  permalink: /docker
+docker compose:
+  label: docker-compose
+  permalink: /docker-compose
+nginx:
+  label: nginx
+  permalink: /nginx
+alembic:
+  label: alembic
+  permalink: /alembic
+web development:
+  label: web-development
+  permalink: /web-development
+back-end:
+  label: back-end
+  permalink: /back-end
+logging:
+  label: logging
+  permalink: /logging
+migration:
+  label: migration
+  permalink: /migration
+fastapi:
+  label: fastapi
+  permalink: /fastapi

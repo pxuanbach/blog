@@ -14,7 +14,7 @@ Trong lĩnh vực phát triển phần mềm nói chung và phát triển ứng 
     </div>
     
     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: 'auto' }}>
-        <h2>Bach Pham</h2>
+        <h2><a href="https://github.com/pxuanbach" target="_blank">Bach Pham</a></h2>
         <p>Software Engineer</p>
     </div>
 </div>

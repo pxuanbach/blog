@@ -9,12 +9,12 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(../../static/img/banner_bg.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(../../../static/img/banner_bg.jpg);
   transition: 0.3s ease-in all;
 }
 
 html[data-theme='dark'] .heroBanner {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url(../../static/img/banner_bg.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url(../../../static/img/banner_bg.jpg);
 }
 
 @media screen and (max-width: 996px) {
@@ -27,4 +27,11 @@ html[data-theme='dark'] .heroBanner {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.recentBlogsContainer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 30px;
+  padding: 80px 60px;
 }
