@@ -5,7 +5,7 @@
 
 .heroBanner {
   flex: 1 auto;
-  padding: 4rem 0;
+  padding: 8rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -30,8 +30,12 @@ html[data-theme='dark'] .heroBanner {
 }
 
 .recentBlogsContainer {
+  padding: 3rem 5rem;
+}
+
+.recentBlogsList {
   display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 30px;
-  padding: 80px 60px;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 4rem;
+  /* padding: 30px 60px 80px; */
 }

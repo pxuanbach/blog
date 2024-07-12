@@ -21,7 +21,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/blog">
-            Khám phá
+            Explore
           </Link>
         </div>
       </div>
@@ -31,23 +31,24 @@ function HomepageHeader() {
 
 export default function Home({ homePageBlogMetadata, recentPosts }): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
-  console.log({ homePageBlogMetadata, recentPosts });
-
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <div className={styles.recentBlogsContainer}>
-        {recentPosts && recentPosts.map((post, index) => (
-          <RecentBlogItems 
-            key={index}
-            index={index}
-            metadata={post.metadata}
-            context={"home"}
-          >
-          </RecentBlogItems>
-        ))}
+        <h1>Recent blogs</h1>
+        <div className={styles.recentBlogsList}>
+          {recentPosts && recentPosts.map((post, index) => (
+            <RecentBlogItems 
+              key={index}
+              index={index}
+              metadata={post.metadata}
+              context={"home"}
+            >
+            </RecentBlogItems>
+          ))}
+        </div>
       </div>
     </Layout>
   );

@@ -2,7 +2,7 @@
 slug: essential-modules-for-developing-applications-with-fastapi-p1
 title: Essential modules for developing applications with FastAPI (P1)
 authors: [pxuanbach]
-tags: [alembic, back-end, logging, migration, fastapi, web development]
+tags: [back-end, alembic, logging, migration, fastapi]
 date: 2024-03-31T10:00
 ---
 
