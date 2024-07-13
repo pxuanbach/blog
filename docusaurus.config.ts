@@ -101,7 +101,7 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Pxuanbach Blog',
+          title: 'ImmersedinCode Blog',
           items: [
             {
               html: '<p>Simplicity is the soul of efficiency.</p>'

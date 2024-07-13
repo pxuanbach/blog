@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import styles from './index.module.css'
+import styles from './index.module.css';
+import dayjs from "dayjs";
 
 
 export function RecentBlogItems({ index, metadata, context }): JSX.Element {
@@ -14,15 +15,23 @@ export function RecentBlogItems({ index, metadata, context }): JSX.Element {
     return siteConfig.url + "/img" + imageUrl
   }
 
+  const formatDate = (date?: string) => {
+    if (!date) {
+      return dayjs().format('MMMM DD, YYYY');
+    }
+    return dayjs(date).format('MMMM DD, YYYY');
+  }
+
   return (
     <div className={`${clsx("col")} ${styles.card}`}>
       <a className={styles.permalink} href={metadata.permalink}></a>
       <div className={`${clsx("text--center")} ${styles.thumbnail}`}>
         <img src={getFeaturedImageUrl(metadata.frontMatter?.image)} alt={metadata.title} width="100" />
       </div>
-      <div className="text--center padding-horiz--md">
-        <h3>{metadata.title}</h3>
-        <p className={styles.description}>{metadata.description}</p>
+      <div className="padding-horiz--md padding-bottom--sm">
+        <h4 className={styles.title}>{metadata.title}</h4>
+        {/* <p className={styles.description}>{metadata.description}</p> */}
+        <span className={styles.date}>{formatDate(metadata.frontMatter?.date)}</span>
       </div>
     </div>
   );
