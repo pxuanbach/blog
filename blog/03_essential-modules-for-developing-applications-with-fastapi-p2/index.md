@@ -287,7 +287,7 @@ app = FastAPI(
 
 ## To sum up
 
-We've discussed two essential modules in developing applications with FastAPI: Logging. By carefully and effectively using these modules, we can build and maintain powerful and flexible FastAPI applications. Hopefully, this article has given you the overview and knowledge needed to use these two important modules in your projects.
+We discussed an essential module in developing applications with FastAPI: Logging. By carefully and effectively using this module, we can build and maintain powerful and flexible FastAPI applications. Hopefully, this article has given you the overview and knowledge needed to use this important module in your projects.
 
 If you need a project to run a demo on your environment, here are my [Git repository](https://github.com/pxuanbach/fastapi-essential-modules).
 
