@@ -39,6 +39,8 @@ const config: Config = {
         blogTitle: 'My Awesome Blog',
         blogDescription: 'A great blog with homepage Docusaurus integration',
         showReadingTime: true,
+        blogSidebarTitle: 'All posts',
+        blogSidebarCount: 'ALL',
       },
     ]
   ],
