@@ -4,7 +4,7 @@ title: "Dockerize MedusaJS Components: Optimize and Deploy Your Application"
 authors: [pxuanbach]
 tags: [deployment, docker, open-source, medusajs]
 date: 2024-04-14T10:00
-image: /04_dockerizing-medusajs-for-optimized-deployment/featured.png # static file
+image: /img/04_dockerizing-medusajs-for-optimized-deployment/featured.png # static file
 ---
 
 Today, I say "Hi Medusa!”.

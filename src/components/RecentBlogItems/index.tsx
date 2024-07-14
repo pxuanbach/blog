@@ -5,16 +5,6 @@ import dayjs from "dayjs";
 
 
 export function RecentBlogItems({ index, metadata, context }): JSX.Element {
-  const {siteConfig} = useDocusaurusContext();
-
-  const getFeaturedImageUrl = (imageUrl?: string) => {
-    if (!imageUrl) {
-      return ""
-    }
-
-    return siteConfig.url + "/img" + imageUrl
-  }
-
   const formatDate = (date?: string) => {
     if (!date) {
       return dayjs().format('MMMM DD, YYYY');
@@ -26,7 +16,7 @@ export function RecentBlogItems({ index, metadata, context }): JSX.Element {
     <div className={`${clsx("col")} ${styles.card}`}>
       <a className={styles.permalink} href={metadata.permalink}></a>
       <div className={`${clsx("text--center")} ${styles.thumbnail}`}>
-        <img src={getFeaturedImageUrl(metadata.frontMatter?.image)} alt={metadata.title} width="100" />
+        <img src={metadata.frontMatter?.image} alt={metadata.title} width="100" />
       </div>
       <div className="padding-horiz--md padding-bottom--sm">
         <h4 className={styles.title}>{metadata.title}</h4>

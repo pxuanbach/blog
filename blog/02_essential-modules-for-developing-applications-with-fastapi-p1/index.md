@@ -4,7 +4,7 @@ title: Essential modules for developing applications with FastAPI (P1 - Migratio
 authors: [pxuanbach]
 tags: [back-end, alembic, migration, fastapi]
 date: 2024-03-31T10:00
-image: /02_essential-modules-for-developing-applications-with-fastapi-p1/featured.png # static file
+image: /img/02_essential-modules-for-developing-applications-with-fastapi-p1/featured.png # static file
 ---
 
 Today, I say “Hi FastAPI”.

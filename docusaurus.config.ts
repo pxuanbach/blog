@@ -3,13 +3,12 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Immersed in Code Blog',
+  title: 'Immersed in Code',
   tagline: 'Simplicity is the soul of efficiency.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  // url: 'https://immersedincode.io.vn',
-  url: 'http://localhost:3000',
+  url: 'https://immersedincode.io.vn',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -75,14 +74,18 @@ const config: Config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+        gtag: {
+          trackingID: 'G-2VH0PJCNSH',
+          anonymizeIP: true,
+        },
       } satisfies Preset.Options,
     ],
   ],
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: '/img/00_welcome/featured.png',
     navbar: {
-      title: 'ImmersedinCode Blog',
+      title: 'Immersed in Code',
       logo: {
         alt: 'Immersed in Code Logo',
         src: 'img/logo.png',

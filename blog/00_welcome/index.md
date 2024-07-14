@@ -3,7 +3,7 @@ slug: welcome
 title: Welcome
 authors: [pxuanbach]
 tags: [hello world]
-image: /00_welcome/featured.jpg
+image: /img/00_welcome/featured.png
 date: 2024-03-15T10:00
 ---
 

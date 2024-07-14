@@ -4,7 +4,7 @@ title: Zero-downtime Deployments with Docker Compose & Nginx
 authors: [pxuanbach]
 tags: [automation, deployment, docker, nginx, shell script]
 date: 2024-03-24T10:00
-image: /01_zero-downtime-deployment-with-docker-compose-nginx/featured.png # static file
+image: /img/01_zero-downtime-deployment-with-docker-compose-nginx/featured.png # static file
 ---
 
 Hey, welcome to my blog!

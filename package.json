@@ -12,7 +12,9 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "build:docker": "docker build -t pxuanbach/immersedincode-blog .",
+    "push:docker": "docker push pxuanbach/immersedincode-blog --all-tags"
   },
   "dependencies": {
     "@docusaurus/core": "^3.3.2",
