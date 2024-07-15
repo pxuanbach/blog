@@ -29,6 +29,7 @@ const config: Config = {
     locales: ['en'],
   },
   plugins: [
+    'docusaurus-plugin-image-zoom',
     // Use custom blog plugin
     [
       './plugins/blog-plugin',
@@ -150,6 +151,17 @@ const config: Config = {
       theme: prismThemes.jettwaveLight,
       darkTheme: prismThemes.jettwaveDark,
     },
+    zoom: {
+      selector: '.markdown img',
+      background: {
+        light: 'rgb(255, 255, 255)',
+        dark: 'rgb(50, 50, 50)'
+      },
+      config: {
+        margin: 50
+        // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
+      }
+    }
   } satisfies Preset.ThemeConfig,
 };
 

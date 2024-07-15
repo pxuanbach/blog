@@ -2,7 +2,7 @@
 slug: essential-modules-for-developing-applications-with-fastapi-p2-logging
 title: Essential modules for developing applications with FastAPI (P2 - Logging)
 authors: [pxuanbach]
-tags: [back-end, logging, fastapi]
+tags: [back-end, logging, fastapi, python]
 date: 2024-04-01T10:00
 image: /img/02_essential-modules-for-developing-applications-with-fastapi-p1/featured.png # static file
 ---
@@ -234,7 +234,7 @@ If you're not familiar with how this module works, the `RotatingFileHandler` cla
 
 In the example, I set the `maxBytes` value to 1MB, so if the size of the log file reaches 1MB, it will be moved to a backup file (`20240405.log.1`, `20240405.log.2`), and new logs will continue to be written to the current file (`20240405.log`).
 
-![Logging to Multiple Sources Rotation Example](./logging-to-multiple-sources-rotation-example.png)\
+![Logging to Multiple Sources Rotation Example](./logging-to-multiple-sources-rotation-example.png)
 
 ### Performance
 
