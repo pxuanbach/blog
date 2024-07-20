@@ -41,11 +41,11 @@ Now, let's talk about batching.
 
 Still using the example with Client 1 and Client 2, but this time, their requests are batched together and processed in just one async operation. By doing this, when the operation completes, both clients are notified, even though the async operation is actually executed only once. 
 
-This approach offers a remarkably simple yet powerful way to optimize the load of an application. It avoids the complexity of more complex caching mechanisms, which often require robust memory management and invalidation strategies.
+This approach offers a remarkably simple yet powerful way to optimize the load of an application. It avoids the complexity of caching mechanisms, which often require robust memory management and invalidation strategies.
 
 ## Normal API server
 
-Let's consider an API server that manages the sales of an e-commerce company. Its task is to retrieve price and stock information for hundreds of thousands of products from the database.
+Let's consider an API server that manages the sales of an e-commerce company. Its task is to retrieve quantity information for hundreds of thousands of products from the database.
 
 The schema used for this example is a simple table with three fields.
 
