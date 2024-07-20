@@ -2,7 +2,7 @@
 slug: asynchronous-request-batching-design-pattern-in-nodejs
 title: Asynchronous Request Batching Design Pattern in Node.js
 authors: [pxuanbach]
-tags: [nodejs, batching]
+tags: [nodejs, batching, back-end]
 date: 2024-07-18T10:00
 image: /img/07_asynchronous_request_batching/featured.png # static file
 ---
@@ -30,8 +30,6 @@ Let's say I export an API and the Client makes multiple requests to that API at 
 <div class="text--center">
   ![Normal Async Request](./normal-async-request.png)
 </div>
-
-
 
 In the example above, both Client 1 and Client 2 make requests to the server. Each request is considered an async operation. As the number of requests increases, the number of asynchronous operations that need to be executed also grows.
 
@@ -153,7 +151,7 @@ We will use a memory space to store the promises that need to be processed (it c
 
 Now it's time to code.
 
-```jsx showLineNumbers title="./totalQuantityBatch.js"
+```jsx showLineNumbers {3,6-8,11-14,16} title="./totalQuantityBatch.js"
 import { totalQuantity as totalQuantityRaw } from "./totalQuantity.js";
 
 const requestsQueue = new Map();
@@ -175,10 +173,10 @@ export function totalQuantity(product) {
 
 The `totalQuantity` function of `totalQuantityBatch` module can be considered a proxy for `totalQuantityRaw` function of `totalQuantity` module, let's see how it works:
 
-1. In line 3, I define the variable `requestsQueue` as a Map to serve as temporary memory.
-2. From line 6-9, we check if a request with the input “product” already exists in the temporary memory. If it does, we return the stored promises.
-3. From line 11-15, If the input “product” does not exist, we start executing the `totalQuantityRaw` function and store it in the temporary memory. One nice thing is that we can leverage `.finally` to attach a callback that removes the promise from the temporary memory.
-4. In line 16, return running promise.
+1. In **line 3**, I define the variable `requestsQueue` as a Map to serve as temporary memory.
+2. From **line 6-8**, we check if a request with the input “product” already exists in the temporary memory. If it does, we return the stored promises.
+3. From **line 11-14**, If the input “product” does not exist, we start executing the `totalQuantityRaw` function and store it in the temporary memory. One nice thing is that we can leverage `.finally` to attach a callback that removes the promise from the temporary memory.
+4. In **line 16**, return running promise.
 
 After completing the logic in the `totalQuantityBatch` module, we need to update the `server.js` to incorporate the new logic.
 
