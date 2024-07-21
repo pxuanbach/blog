@@ -30,6 +30,7 @@ const config: Config = {
   },
   plugins: [
     'docusaurus-plugin-image-zoom',
+    "docusaurus-lunr-search",
     // Use custom blog plugin
     [
       './plugins/blog-plugin',
