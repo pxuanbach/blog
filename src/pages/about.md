@@ -14,7 +14,7 @@ In the field of software development in general, and web application development
 
 <div style={{ display: 'flex', width: '100%', height: 'auto' }}>
     <div style={{width: '160px', marginRight: '20px'}}> 
-        <img src={require('../../static/img/logo.png').default} alt="Immersed in Code Logo"/>
+        <img src={require('../../static/img/logo-large.png').default} alt="Immersed in Code Logo"/>
     </div>
     
     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: 'auto' }}>

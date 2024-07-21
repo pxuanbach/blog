@@ -8,7 +8,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(../../../static/img/banner_bg.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(../../../static/img/banner_bg_2k.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100vw 90vh;
@@ -16,7 +16,7 @@
 }
 
 html[data-theme='dark'] .heroBanner {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url(../../../static/img/banner_bg.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url(../../../static/img/banner_bg_2k.jpg);
 }
 
 .heroTitle {
