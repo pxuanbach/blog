@@ -205,8 +205,9 @@ We can clearly see that the processing time for all requests has been significan
 
 When implementing in a real-world project, we will use more advanced techniques to ensure the application operates reliably and smoothly.
 
-- We will need a more optimized temporary memory space. A large number of requests to the server with different inputs later could cause the memory to expand significantly. You might consider using LRU (Least Recently Used) or FIFO (First In, First Out) methods for data management.
-- When the application is distributed across multiple processes and instances, storing promises in memory in different locations can lead to inconsistent results and become redundant. The solution is to use a shared storage. Common caching solutions include Redis ([Redis - The Real-time Data Platform](https://redis.io/)) and Memcached ([memcached - a distributed memory object caching system](https://memcached.org/)).
+- We will need a more optimized temporary memory space. A large number of requests to the server with different inputs later could cause the memory to expand significantly. You might consider using **LRU (Least Recently Used)** or **FIFO (First In, First Out)** methods for data management.
+- You can also apply caching to enhance the effectiveness of this technique and standardize the stored data for easier sharing. Of course, you will need to address the issue of cache invalidation.
+- When the application is distributed across multiple processes and instances, storing data in memory in different locations can lead to inconsistent results and become redundant. The solution is to use a shared storage. Common caching solutions include **Redis** ([Redis - The Real-time Data Platform](https://redis.io/)) and **Memcached** ([memcached - a distributed memory object caching system](https://memcached.org/)).
 
 ## Conclusion
 
