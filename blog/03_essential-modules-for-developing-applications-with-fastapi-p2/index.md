@@ -2,7 +2,7 @@
 slug: essential-modules-for-developing-applications-with-fastapi-p2-logging
 title: Essential modules for developing applications with FastAPI (P2 - Logging)
 authors: [pxuanbach]
-tags: [back-end, logging, fastapi, python]
+tags: [back-end, logging, fastapi, python, essential-modules-fastapi]
 date: 2024-04-01T10:00
 image: /img/02_essential-modules-for-developing-applications-with-fastapi-p1/featured.png # static file
 ---

@@ -2,7 +2,7 @@
 slug: essential-modules-for-developing-applications-with-fastapi-p3-caching
 title: Essential modules for developing applications with FastAPI (P3 - Caching)
 authors: [pxuanbach]
-tags: [back-end, caching, fastapi, redis, python]
+tags: [back-end, caching, fastapi, redis, python, essential-modules-fastapi]
 date: 2024-04-20T10:00
 image: /img/02_essential-modules-for-developing-applications-with-fastapi-p1/featured.png # static file
 ---
