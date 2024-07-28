@@ -2,7 +2,7 @@
 slug: essential-modules-for-developing-applications-with-fastapi-p1-migration
 title: Essential modules for developing applications with FastAPI (P1 - Migration)
 authors: [pxuanbach]
-tags: [back-end, alembic, migration, fastapi, python]
+tags: [back-end, alembic, migration, fastapi, python, essential-modules-fastapi]
 date: 2024-03-31T10:00
 image: /img/02_essential-modules-for-developing-applications-with-fastapi-p1/featured.png # static file
 ---
