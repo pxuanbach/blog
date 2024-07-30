@@ -1,0 +1,29 @@
+.badge {
+  padding: 0.25rem;
+  width: fit-content;
+  cursor: pointer;
+  margin: 0 0.2rem 0.5rem 0;
+  display: inline-block;
+}
+
+.permalink {
+  border-radius: var(--ifm-global-radius);
+  padding: 0.2rem 0.5rem 0.3rem;
+  font-size: 90%;
+  border: 1px solid var(--docusaurus-tag-list-border);
+}
+
+.permalink:hover {
+  text-decoration: none;
+  border: 1px solid var(--ifm-color-primary-darker);
+}
+
+.permalink span {
+  background: var(--ifm-color-secondary);
+  color: var(--ifm-color-black);
+  font-size: 0.7rem;
+  line-height: 1.2;
+  border-radius: var(--ifm-global-radius);
+  padding: 0.1rem 0.4rem;
+  margin-left: 0.3rem;
+}

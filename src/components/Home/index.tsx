@@ -4,6 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import { RecentBlogItems } from '../RecentBlogItems';
+import { TopTagItems } from '../TopTagItems';
 
 import styles from './index.module.css';
 
@@ -29,8 +30,9 @@ function HomepageHeader() {
   );
 }
 
-export default function Home({ homePageBlogMetadata, recentPosts }): JSX.Element {
+export default function Home({ homePageBlogMetadata, recentPosts, topTags }): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
+
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
@@ -48,6 +50,37 @@ export default function Home({ homePageBlogMetadata, recentPosts }): JSX.Element
             >
             </RecentBlogItems>
           ))}
+        </div>
+        <div className={styles.viewAll}>
+          <Link
+            to="/blog">
+            <h4>View All Blogs >></h4>
+          </Link>
+        </div>
+      </div>
+      <div className={styles.topTagsContainer}>
+        <h1>Top tags</h1>
+        <div className={styles.topTagsList}>
+          {topTags && topTags.map((tag, index) => (
+            <TopTagItems 
+              key={index}
+              index={index}
+              metadata={tag.metadata}
+              context={"home"}
+            >
+            </TopTagItems>
+          ))}
+          <TopTagItems 
+            key={9999}
+            index={9999}
+            metadata={{
+              permalink: "/blog/tags",
+              label: "View All Tags...",
+              total: 0
+            }}
+            context={"home"}
+          >
+          </TopTagItems>
         </div>
       </div>
     </Layout>

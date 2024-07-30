@@ -2,7 +2,7 @@
 slug: essential-modules-for-developing-applications-with-fastapi-p4-job-scheduler
 title: Essential modules for developing applications with FastAPI (P4 - Job Scheduler)
 authors: [pxuanbach]
-tags: [back-end, fastapi, apscheduler, job-scheduler, python, essential-modules-fastapi]
+tags: [fastapi, apscheduler, job-scheduler, python, essential-modules-fastapi]
 date: 2024-07-28T10:00
 image: /img/02_essential-modules-for-developing-applications-with-fastapi-p1/featured.png # static file
 ---

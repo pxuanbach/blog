@@ -37,6 +37,12 @@ html[data-theme='dark'] .heroTitle {
   transition: 0.15s all ease-in;
 }
 
+.viewAll {
+  margin-top: 2rem;
+  text-align: center;
+  transition: 0.15s all ease-out;
+}
+
 html[data-theme='dark'] .buttons a {
   background-color: var(--ifm-color-primary);
   color: var(--ifm-color-secondary-light);
@@ -51,9 +57,8 @@ html[data-theme='dark'] .buttons a:hover {
 
 .recentBlogsContainer {
   flex: 1 auto;
-  padding: 3rem 10rem 6rem;
+  padding: 3rem 10rem 4rem;
   transition: 0.3s all ease;
-  /* min-height: 300px; */
 }
 
 .recentBlogsList {
@@ -62,6 +67,21 @@ html[data-theme='dark'] .buttons a:hover {
   grid-gap: 1.5rem;
   transition: 0.3s all ease;
 }
+
+/* ----------------------------- */
+
+.topTagsContainer {
+  flex: 1 auto;
+  padding: 1rem 10rem 6rem;
+  transition: 0.3s all ease;
+}
+
+.topTagsList {
+  display: inline;
+  transition: 0.3s all ease;
+}
+
+/* ----------------------------- */
 
 @media screen and (max-width: 1536px) {
   .recentBlogsList {

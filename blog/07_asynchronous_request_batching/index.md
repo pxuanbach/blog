@@ -2,7 +2,7 @@
 slug: asynchronous-request-batching-design-pattern-in-nodejs
 title: Asynchronous Request Batching Design Pattern in Node.js
 authors: [pxuanbach]
-tags: [nodejs, batching, back-end]
+tags: [nodejs, batching]
 date: 2024-07-18T10:00
 image: /img/07_asynchronous_request_batching/featured.png # static file
 ---

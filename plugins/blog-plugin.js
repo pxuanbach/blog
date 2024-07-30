@@ -20,6 +20,12 @@ async function blogPluginExtended(...pluginArgs) {
       const recentPostsLimit = 4;
       const recentPosts = [...content.blogPosts].splice(0, recentPostsLimit);
 
+      const blogTagsLimit = 12;
+      const blogTags = Object.keys(content.blogTags)
+        .map((key) => content.blogTags[key])
+        .sort((a, b) => b.items.length - a.items.length)
+        .splice(0, blogTagsLimit);
+
       async function createRecentPostModule(blogPost, index) {
         return {
           // Inject the metadata you need for each recent blog post
@@ -46,6 +52,21 @@ async function blogPluginExtended(...pluginArgs) {
         };
       }
 
+      async function createTopTagsModule(tag, index) {
+        return {
+          // Inject the metadata you need for each tag stats
+          metadata: await actions.createData(
+            `home-page-top-tags-metadata-${index}.json`,
+            JSON.stringify({
+              label: tag.label,
+              total: tag.items ? tag.items.length : 0,
+              permalink: tag.permalink,
+              unlisted: tag.unlisted,
+            })
+          )
+        };
+      }
+
       actions.addRoute({
         // Add route for the home page
         path: '/',
@@ -68,6 +89,9 @@ async function blogPluginExtended(...pluginArgs) {
           recentPosts: await Promise.all(
             recentPosts.map(createRecentPostModule)
           ),
+          topTags: await Promise.all(
+            blogTags.map((tag, index) => createTopTagsModule(tag, index))
+          )
         },
       });
 
