@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import styles from './index.module.css';
 import dayjs from "dayjs";
-
+import Link from '@docusaurus/Link';
 
 export function RecentBlogItems({ index, metadata, context }): JSX.Element {
   const formatDate = (date?: string) => {
@@ -13,7 +13,7 @@ export function RecentBlogItems({ index, metadata, context }): JSX.Element {
 
   return (
     <div className={`${clsx("col")} ${styles.card}`}>
-      <a className={styles.permalink} href={metadata.permalink}></a>
+      <Link className={styles.permalink} to={metadata.permalink}></Link>
       <div className={`${clsx("text--center")} ${styles.thumbnail}`}>
         <img src={metadata.frontMatter?.image} alt={metadata.title} width="100" />
       </div>
