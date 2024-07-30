@@ -1,7 +1,7 @@
 .card {
   padding: 0;
   overflow: hidden;
-  max-width: 500px;
+  /* max-width: 500px; */
   /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
   box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 2px 4px;
   cursor: pointer;
