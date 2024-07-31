@@ -95,6 +95,10 @@ html[data-theme='dark'] .buttons a:hover {
     padding: 4rem 6rem;
   }
 
+  .topTagsContainer {
+    padding: 1rem 6rem 4rem;
+  }
+
   .recentBlogsList {
     grid-template-columns: repeat(3, minmax(200px, 500px));
     transition: 0.3s all ease;
@@ -114,20 +118,19 @@ html[data-theme='dark'] .buttons a:hover {
     transition: 0.3s all ease;
   }
 
+  .topTagsContainer {
+    padding: 1rem 2rem 3rem;
+  }
+
   .recentBlogsList {
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(2, minmax(200px, 500px));
     transition: 0.5s all ease-out;
   }
 }
 
 @media screen and (max-width: 640px) {
-  .recentBlogsContainer {
-    padding: 3rem 2rem;
-    transition: 0.3s all ease;
-  }
-
   .recentBlogsList {
-    grid-template-columns: auto;
+    grid-template-columns: repeat(1, minmax(200px, auto));
     transition: 0.5s all ease-out;
   }
 }

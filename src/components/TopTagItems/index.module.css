@@ -11,6 +11,7 @@
   padding: 0.2rem 0.5rem 0.3rem;
   font-size: 90%;
   border: 1px solid var(--docusaurus-tag-list-border);
+  text-wrap: nowrap;
 }
 
 .permalink:hover {
