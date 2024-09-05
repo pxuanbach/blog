@@ -55,7 +55,7 @@ prometheus-fastapi-instrumentator = "^7.0.0"
 
 I am confident that this is one of the most important modules when you want to deploy a product to a production environment.
 
-Currently, many packages can help you monitor your FastAPI app. The package I like to use the most is [**Prometheus FastAPI Instrumentator](https://github.com/trallnag/prometheus-fastapi-instrumentator)** (919 stars, 83 forks on 03/09/2024). I often use it along with Prometheus and Grafana, creating visual dashboards from those metrics helps me easily monitor the application. I will discuss this stack in another article.
+Currently, many packages can help you monitor your FastAPI app. The package I like to use the most is [Prometheus FastAPI Instrumentator](https://github.com/trallnag/prometheus-fastapi-instrumentator) (919 stars, 83 forks on 03/09/2024). I often use it along with Prometheus and Grafana, creating visual dashboards from those metrics helps me easily monitor the application. I will discuss this stack in another article.
 
 ![fastapi-instrumentator-prometheus.jpg](./fastapi-instrumentator-prometheus.jpg)
 
