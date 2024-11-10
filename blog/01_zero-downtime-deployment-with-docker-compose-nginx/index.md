@@ -193,7 +193,6 @@ docker compose rm -fsv $ACTIVE_SERVICE
 Let’s walk through the script step by step:
 
 1. I define the name and port of the blue and green services. And the maximum retry time to check the status of the container. The value depends on your container initialization time.
-Sau đó tiến hành pull phiên bản mới của Docker image về.
 2. Execute the docker command to find the inactive service and start it.
 3. Check the status of the newly initialized container.
 4. Update Nginx configuration and reload it. Using `nginx -s reload` to reload Nginx **usually does not cause downtime**. This is because the command only tells Nginx to reload its configuration, it does not restart the entire process.
