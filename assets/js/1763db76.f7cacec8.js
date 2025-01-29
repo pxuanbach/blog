@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkme=self.webpackChunkme||[]).push([[8427],{1119:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/blog","page":1,"postsPerPage":10,"totalPages":2,"totalCount":12,"nextPage":"/blog/page/2","blogDescription":"A great blog with homepage Docusaurus integration","blogTitle":"My Awesome Blog"}}')}}]);

@@ -4,10 +4,27 @@
         <title>Immersed in Code Blog</title>
         <link>https://immersedincode.io.vn/blog</link>
         <description>Immersed in Code Blog</description>
-        <lastBuildDate>Mon, 02 Sep 2024 10:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 29 Jan 2025 10:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Happy New Year 2025]]></title>
+            <link>https://immersedincode.io.vn/blog/happy-new-year-2025</link>
+            <guid>https://immersedincode.io.vn/blog/happy-new-year-2025</guid>
+            <pubDate>Wed, 29 Jan 2025 10:00:00 GMT</pubDate>
+            <description><![CDATA[Hi everyone, I hope you and your family are all doing well! 🎆🎆🎆]]></description>
+            <content:encoded><![CDATA[<p>Hi everyone, I hope you and your family are all doing well! 🎆🎆🎆</p>
+<p>A new year has arrived, many goals from the previous year remain unfinished. But don't worry, we can carry them into this year and accomplish them now.</p>
+<p>Sometimes, I can not complete everything on my to-do list. However, I have made progress on each task, and that is still growth.</p>
+<p><strong>Just chill and get better every day.</strong></p>
+<p>Recently, I have been stuck with some study projects in my graduate school.</p>
+<p>It is a big change 🥲 when I was working, I could just type a few keywords into Google and find some documents to solve my problems. But in an academic environment, the information is not just in technical documents; it is also in published papers and their citations.</p>
+<p>I have spent so much time just trying to understand half of a paper! LOL 😂</p>
+<p>To be honest, after work and studying, I feel a bit lazy. So I have not been writing new posts lately, even though I have a lot of ideas for them.</p>
+<p>I think I should add a new task to my to-do list: <em>writing new blog posts</em>.</p>]]></content:encoded>
+            <category>hello world</category>
+        </item>
         <item>
             <title><![CDATA[Essential modules for developing applications with FastAPI (P6 - Monitoring)]]></title>
             <link>https://immersedincode.io.vn/blog/essential-modules-for-developing-applications-with-fastapi-p6-monitoring</link>
