@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkme=self.webpackChunkme||[]).push([[5492],{6755:e=>{e.exports=JSON.parse('{"label":"prometheus","total":1,"permalink":"/blog/tags/prometheus","unlisted":false}')}}]);

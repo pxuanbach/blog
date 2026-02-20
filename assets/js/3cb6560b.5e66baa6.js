@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkme=self.webpackChunkme||[]).push([[5034],{1485:e=>{e.exports=JSON.parse('{"label":"fastapi","total":6,"permalink":"/blog/tags/fastapi","unlisted":false}')}}]);

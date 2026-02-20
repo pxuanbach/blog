@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkme=self.webpackChunkme||[]).push([[3777],{8334:e=>{e.exports=JSON.parse('{"blogTitle":"My Awesome Blog","blogDescription":"A great blog with homepage Docusaurus integration","totalPosts":12,"totalRecentPosts":4}')}}]);
