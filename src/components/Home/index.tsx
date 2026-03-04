@@ -5,6 +5,7 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import { RecentBlogItems } from '../RecentBlogItems';
 import { TopTagItems } from '../TopTagItems';
+import { JourneyTimeline } from '../Timeline';
 
 import styles from './index.module.css';
 
@@ -58,6 +59,7 @@ export default function Home({ homePageBlogMetadata, recentPosts, topTags }): JS
           </Link>
         </div>
       </div>
+      <JourneyTimeline />
       <div className={styles.topTagsContainer}>
         <h1>Top tags</h1>
         <div className={styles.topTagsList}>
