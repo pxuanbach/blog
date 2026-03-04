@@ -1,0 +1,210 @@
+.section {
+  padding: 4rem 2rem 5rem;
+  background-color: var(--ifm-background-color);
+  transition: background-color 0.3s ease;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: var(--ifm-heading-color);
+}
+
+/* ─── Timeline layout ───────────────────────────────────────────── */
+
+.timeline {
+  position: relative;
+}
+
+/* Vertical center line */
+.line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  transform: translateX(-50%);
+  background-color: var(--ifm-color-emphasis-300);
+}
+
+/* ─── Each row ──────────────────────────────────────────────────── */
+
+.timelineRow {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+}
+
+/* Left-side items: card on the left, node in the center */
+.left {
+  justify-content: flex-start;
+}
+
+.left .cardWrapper {
+  width: 44%;
+  padding-right: 2rem;
+}
+
+/* Right-side items: card on the right, node in the center */
+.right {
+  justify-content: flex-end;
+}
+
+.right .cardWrapper {
+  width: 44%;
+  padding-left: 2rem;
+}
+
+/* ─── Center node ───────────────────────────────────────────────── */
+
+.node {
+  position: absolute;
+  left: 50%;
+  top: 1.2rem;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--ifm-color-primary);
+  border: 3px solid var(--ifm-background-color);
+  box-shadow: 0 0 0 2px var(--ifm-color-primary);
+  z-index: 1;
+}
+
+/* ─── Card ──────────────────────────────────────────────────────── */
+
+.card {
+  background-color: var(--ifm-card-background-color, var(--ifm-background-surface-color));
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover,
+.cardExpanded {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  border-color: var(--ifm-color-primary-light);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.3rem;
+}
+
+.icon {
+  font-size: 1.1rem;
+  color: var(--ifm-color-primary);
+  flex-shrink: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ifm-heading-color);
+}
+
+.company {
+  margin: 0 0 0.15rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.duration {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.description {
+  margin: 0 0 0.5rem;
+  font-size: 0.875rem;
+  color: var(--ifm-font-color-base);
+  line-height: 1.5;
+}
+
+/* ─── Achievements (expandable) ─────────────────────────────────── */
+
+.achievements {
+  overflow: hidden;
+}
+
+.achievementsInner {
+  padding-top: 0.75rem;
+  margin-top: 0.75rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.achievementsTitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ifm-color-primary);
+  margin: 0 0 0.5rem;
+}
+
+.achievementsInner ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.85rem;
+  color: var(--ifm-font-color-base);
+}
+
+.achievementsInner ul li {
+  margin-bottom: 0.25rem;
+}
+
+/* ─── Expand hint ───────────────────────────────────────────────── */
+
+.expandHint {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--ifm-color-primary);
+  text-align: right;
+  user-select: none;
+}
+
+/* ─── Responsive ────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 1rem 4rem;
+  }
+
+  /* Collapse to single-column on mobile */
+  .line {
+    left: 10px;
+  }
+
+  .timelineRow {
+    justify-content: flex-end !important;
+  }
+
+  .node {
+    left: 10px;
+    transform: none;
+  }
+
+  .left .cardWrapper,
+  .right .cardWrapper {
+    width: calc(100% - 32px);
+    padding-left: 1.5rem;
+    padding-right: 0;
+  }
+}

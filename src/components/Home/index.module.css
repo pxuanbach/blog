@@ -57,14 +57,14 @@ html[data-theme='dark'] .buttons a:hover {
 
 .recentBlogsContainer {
   flex: 1 auto;
-  padding: 3rem 10rem 4rem;
+  padding: 3rem 14rem 4rem;
   transition: 0.3s all ease;
 }
 
 .recentBlogsList {
   display: grid;
   grid-template-columns: repeat(4, minmax(200px, 500px));
-  grid-gap: 1.5rem;
+  grid-gap: 1rem;
   transition: 0.3s all ease;
 }
 
@@ -72,7 +72,7 @@ html[data-theme='dark'] .buttons a:hover {
 
 .topTagsContainer {
   flex: 1 auto;
-  padding: 1rem 10rem 6rem;
+  padding: 1rem 14rem 6rem;
   transition: 0.3s all ease;
 }
 
