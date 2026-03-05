@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkme=self.webpackChunkme||[]).push([[8067],{3440:e=>{e.exports=JSON.parse('{"label":"essential-modules-fastapi","total":6,"permalink":"/blog/tags/essential-modules-fastapi","unlisted":false}')}}]);
