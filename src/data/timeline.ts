@@ -56,7 +56,7 @@ export const timelineData: TimelineItem[] = [
         id: 102,
         type: "education",
         iconType: "education",
-        title: "Bachelor of Software Engineering",
+        title: "SOFTWARE ENGINEER",
         company: "University of Information Technology – VNU HCM",
         duration: "08/2019 - 09/2023",
         description:
