@@ -2,8 +2,7 @@ export type TimelineItemType =
     | "work"
     | "education"
     | "certification"
-    | "achievement"
-    | "personal_project";
+    | "achievement";
 
 export interface TimelineItem {
     id: number;
@@ -19,17 +18,15 @@ export interface TimelineItem {
 
 export const timelineData: TimelineItem[] = [
     {
-        id: 101,
-        type: "personal_project",
-        iconType: "personal_project",
-        title: "UtilKits",
-        company: "util-kits.io.vn",
-        url: "https://util-kits.io.vn",
-        duration: "Released in 03/2026",
-        description:
-            `Fast, simple browser-based utilities for PDF and text processing. 
-            Merge, compress, split, and sign PDF files. Word count, URL encoder and more.`,
-        achievements: [],
+        id: 99,
+        type: "education",
+        iconType: "education",
+        title: "Master of Cybersecurity",
+        company: "University of Information Technology – VNU HCM",
+        duration: "08/2024 - Present",
+        description: `Pursuing a Master's degree in Cybersecurity, focusing on advanced topics such as LLM security, 
+        network security, cryptography, and ethical hacking.`,
+        achievements: ["GPA: 8.09 / 10"],
     },
     {
         id: 100,
@@ -38,25 +35,13 @@ export const timelineData: TimelineItem[] = [
         title: "Full-stack Developer",
         company: "SHIFTASIA",
         duration: "08/2024 - Present",
-        description:
-            `Work with diverse and talented colleagues across multiple aspects of project development. 
-      Contributed to the development of a wide range of projects, including B2B, Educational, and internal tools.`,
+        description: `Collaborate with cross-functional teams across the full software development lifecycle. 
+            Actively contribute to architecting and building diverse applications, including B2B platforms, 
+            EdTech solutions, and internal enterprise tools.`,
         achievements: [],
     },
     {
         id: 101,
-        type: "personal_project",
-        iconType: "personal_project",
-        title: "Immersed in Code Blog",
-        company: "immersedincode.io.vn",
-        url: "#",
-        duration: "Released in 05/2024",
-        description:
-            `Created and maintain a personal technical blog to share knowledge and experience gained throughout work and studies.`,
-        achievements: [],
-    },
-    {
-        id: 102,
         type: "work",
         iconType: "work",
         title: "Intern & Software Engineer",
@@ -68,14 +53,54 @@ export const timelineData: TimelineItem[] = [
         achievements: [],
     },
     {
-        id: 103,
+        id: 102,
         type: "education",
         iconType: "education",
         title: "Bachelor of Software Engineering",
         company: "University of Information Technology – VNU HCM",
         duration: "08/2019 - 09/2023",
         description:
-            `Studied Software Engineering with a strong focus on backend systems, databases, and cloud technologies.`,
+            `Completed comprehensive coursework in Software Engineering, 
+            with a specialized focus on backend architecture, distributed databases, 
+            and cloud-native technologies.`,
         achievements: ["GPA: 8.33 / 10"],
+    },
+];
+
+// ─── What I Built ────────────────────────────────────────────────
+
+export interface BuiltItem {
+    id: number;
+    title: string;
+    duration: string;
+    description: string;
+    achievements: string[];
+    url?: string;
+    imageUrl?: string;
+}
+
+export const builtData: BuiltItem[] = [
+    {
+        id: 99,
+        title: "UtilKits",
+        url: "https://util-kits.io.vn",
+        duration: "Released in 03/2026",
+        imageUrl: "img/built_logo/util-kits.io.vn.png",
+        description:
+            `A comprehensive suite of fast, client-side browser utilities for PDF and text processing. 
+            Features include secure PDF manipulation (merge, compress, split, sign) and essential text tools 
+            like word counting and data encoding.`,
+        achievements: [],
+    },
+    {
+        id: 100,
+        title: "Immersed in Code Blog",
+        url: "#",
+        imageUrl: "img/logo.png",
+        duration: "Released in 05/2024",
+        description:
+            `A personal tech blog dedicated to sharing in-depth insights, coding tutorials, 
+            and industry best practices focusing on software engineering and modern programming paradigms.`,
+        achievements: [],
     },
 ];

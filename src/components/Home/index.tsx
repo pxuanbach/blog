@@ -55,7 +55,7 @@ export default function Home({ homePageBlogMetadata, recentPosts, topTags }): JS
         <div className={styles.viewAll}>
           <Link
             to="/blog">
-            <h4>View All Blogs >></h4>
+            <h4>View All Blogs &gt;&gt;</h4>
           </Link>
         </div>
       </div>
