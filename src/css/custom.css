@@ -55,3 +55,8 @@ img[src*='#center'] {
   display: block;
   margin: auto;
 }
+
+/* Text button dark mode fix */
+[data-theme='dark'] .textButton_ttrd {
+  color: var(--notebook-ink);
+}

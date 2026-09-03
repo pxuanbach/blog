@@ -84,13 +84,11 @@ export const builtData: BuiltItem[] = [
     {
         id: 99,
         title: "UtilKits",
-        url: "https://util-kits.io.vn",
+        url: "https://www.util-kits.io.vn",
         duration: "Released in 03/2026",
         imageUrl: "img/built_logo/util-kits.io.vn.png",
         description:
-            `A comprehensive suite of fast, client-side browser utilities for PDF and text processing. 
-            Features include secure PDF manipulation (merge, compress, split, sign) and essential text tools 
-            like word counting and data encoding.`,
+            `Hands-on guides, practical tips, and real-world AI tutorials for developers and beginners exploring LLMs, Agentic AI and AI tools.`,
         achievements: [],
     },
     {
