@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, type JSX } from "react";
 import {
   FaBriefcase,
   FaGraduationCap,
@@ -6,6 +6,7 @@ import {
   FaTrophy,
   FaLaptopCode,
 } from "react-icons/fa";
+import { FiChevronDown, FiChevronUp, FiExternalLink } from "react-icons/fi";
 import { motion } from "framer-motion";
 import {
   timelineData,
@@ -69,8 +70,14 @@ function TimelineCard({
             <span className={styles.icon}>{getIcon(item.iconType)}</span>
             <h3 className={styles.title}>{item.title}</h3>{" "}
             {item.url && (
-              <a href={item.url} target="_blank" rel="noopener noreferrer">
-                🔗
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Open link for ${item.title}`}
+                className={styles.extLink}
+              >
+                <FiExternalLink aria-hidden="true" />
               </a>
             )}
           </div>
@@ -102,7 +109,11 @@ function TimelineCard({
 
           {item.achievements.length > 0 && (
             <span className={styles.expandHint}>
-              {isExpanded ? "▲ less" : "▼ more"}
+              {isExpanded ? (
+                <><FiChevronUp aria-hidden="true" /> less</>
+              ) : (
+                <><FiChevronDown aria-hidden="true" /> more</>
+              )}
             </span>
           )}
         </div>
@@ -157,9 +168,10 @@ const BuiltCard = React.memo(function BuiltCard({
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={styles.builtUrl}
+              className={styles.extLink}
+              aria-label={`Open link for ${item.title}`}
             >
-              🔗
+              <FiExternalLink aria-hidden="true" />
             </a>
           ) : null}
           <p className={styles.builtDuration}>{item.duration}</p>

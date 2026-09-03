@@ -1,136 +1,157 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
-.heroBanner {
-  flex: 1 auto;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(../../../static/img/banner_bg_2k.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100vw 90vh;
-  min-height: 52vh;
-}
-
-html[data-theme='dark'] .heroBanner {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url(../../../static/img/banner_bg_2k.jpg);
-}
-
-.heroTitle {
-  font-size: 3rem;
-}
-
-html[data-theme='dark'] .heroTitle {
-  text-shadow: 2px -2px 28px rgba(255, 255, 255, 1);
-  /* box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; */
-}
-
-.buttons {
+/* ─── The sheet: one continuous quarterly page ─── */
+.sheet {
+  max-width: 1200px;
   margin: 0 auto;
-  width: fit-content;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
-.buttons a {
-  transition: 0.15s all ease-in;
+/* ─── Masthead ─── */
+.masthead {
+  padding: clamp(3rem, 7vw, 5.5rem) 0 clamp(2rem, 4vw, 3rem);
 }
 
-.viewAll {
-  margin-top: 2rem;
-  text-align: center;
-  transition: 0.15s all ease-out;
+.folio {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--iic-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--iic-ink-mute);
+  margin: 0 0 1.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--ifm-heading-color);
 }
 
-html[data-theme='dark'] .buttons a {
-  background-color: var(--ifm-color-primary);
-  color: var(--ifm-color-secondary-light);
-  border: none;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-  transition: 0.15s all ease-out;
+.folioRule {
+  flex: 1;
+  height: 1px;
+  background-color: var(--iic-hairline);
+  min-width: 1.5rem;
 }
 
-html[data-theme='dark'] .buttons a:hover {
-  background-color: var(--ifm-color-primary-dark);
+.title {
+  font-size: clamp(2.75rem, 8vw, 6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+  margin: 0 0 1.25rem;
+  text-wrap: balance;
+  max-width: 14ch;
 }
 
-.recentBlogsContainer {
-  flex: 1 auto;
-  padding: 3rem 14rem 4rem;
-  transition: 0.3s all ease;
+.standfirst {
+  font-family: var(--iic-serif);
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+  line-height: 1.5;
+  color: var(--ifm-font-color-base);
+  max-width: 44ch;
+  margin: 0;
 }
 
-.recentBlogsList {
+/* ─── Lead plate ─── */
+.leadSection {
+  padding: 0 0 clamp(2.5rem, 5vw, 4rem);
+}
+
+.leadWrap {
+  position: relative;
+}
+
+/* stamp sits half off the lead plate's corner */
+.stampSlot {
+  position: absolute;
+  top: -60px;
+  right: clamp(1rem, 6vw, 4rem);
+  z-index: 2;
+}
+
+/* ─── Plates grid ─── */
+.platesSection {
+  padding: 0 0 clamp(3rem, 6vw, 5rem);
+}
+
+.sectionHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--ifm-heading-color);
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.sectionTitle {
+  font-family: var(--iic-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--iic-ink-mute);
+  margin: 0;
+}
+
+.sectionLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--iic-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  white-space: nowrap;
+}
+
+.sectionLink:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.platesGrid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(200px, 500px));
-  grid-gap: 1rem;
-  transition: 0.3s all ease;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 3rem;
 }
 
-/* ----------------------------- */
-
-.topTagsContainer {
-  flex: 1 auto;
-  padding: 1rem 14rem 6rem;
-  transition: 0.3s all ease;
+/* ─── Index ─── */
+.indexSection {
+  padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 8vw, 6rem);
+  border-top: 1px solid var(--iic-hairline);
 }
 
-.topTagsList {
-  display: inline;
-  transition: 0.3s all ease;
+.tokens {
+  padding-top: 1.5rem;
 }
 
-/* ----------------------------- */
-
-@media screen and (max-width: 1536px) {
-  .recentBlogsList {
-    transition: 0.3s all ease;
-    grid-gap: 1rem;
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .recentBlogsContainer {
-    padding: 4rem 6rem;
+@media screen and (max-width: 996px) {
+  .platesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2rem;
   }
 
-  .topTagsContainer {
-    padding: 1rem 6rem 4rem;
-  }
-
-  .recentBlogsList {
-    grid-template-columns: repeat(3, minmax(200px, 500px));
-    transition: 0.3s all ease;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .recentBlogsList {
-    grid-template-columns: auto auto;
-    transition: 0.5s all ease-out;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .recentBlogsContainer {
-    padding: 3rem 2rem;
-    transition: 0.3s all ease;
-  }
-
-  .topTagsContainer {
-    padding: 1rem 2rem 3rem;
-  }
-
-  .recentBlogsList {
-    grid-template-columns: repeat(2, minmax(200px, 500px));
-    transition: 0.5s all ease-out;
+  .stampSlot {
+    top: -48px;
+    right: 1rem;
+    transform: scale(0.85);
   }
 }
 
 @media screen and (max-width: 640px) {
-  .recentBlogsList {
-    grid-template-columns: repeat(1, minmax(200px, auto));
-    transition: 0.5s all ease-out;
+  .platesGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .folio {
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+  }
+
+  .folioRule {
+    display: none;
   }
 }

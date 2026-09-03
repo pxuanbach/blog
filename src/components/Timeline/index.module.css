@@ -1,69 +1,68 @@
+/* ─── Ledger: square entries on hairlines ─── */
 .section {
-  padding: 4rem 0 5rem;
-  background-color: var(--ifm-background-color);
-  transition: background-color 0.3s ease, padding 0.4s ease;
+  padding: 5rem 0 6rem;
+  border-top: 1px solid var(--iic-hairline);
+  background-color: transparent;
 }
 
 .container {
-  padding: 0 14rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-/* ─── Two-column grid ───────────────────────────────────────────── */
-
+/* ─── Two-column grid ─────────────────────────────────────── */
 .twoColumnGrid {
   display: grid;
   grid-template-columns: 3fr 2fr;
   column-gap: 0;
   align-items: start;
-  transition: grid-template-columns 0.4s ease;
 }
 
 .leftColumn {
   padding-right: 4rem;
-  border-right: 1px solid var(--ifm-color-emphasis-200);
-  transition: padding 0.4s ease, border-color 0.3s ease;
+  border-right: 1px solid var(--iic-hairline);
 }
 
 .rightColumnInner {
   padding-left: 4rem;
-  transition: padding 0.4s ease;
 }
 
 .columnTitle {
-  text-align: center;
-  font-size: 1.75rem;
-  font-weight: 700;
-  margin-bottom: 2.5rem;
-  color: var(--ifm-heading-color);
+  font-family: var(--iic-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--iic-ink-mute);
+  margin: 0 0 2.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--ifm-heading-color);
 }
 
-/* ─── Timeline layout ───────────────────────────────────────────── */
-
+/* ─── Timeline layout ─────────────────────────────────────── */
 .timeline {
   position: relative;
 }
 
-/* Vertical center line */
 .line {
   position: absolute;
   left: 50%;
   top: 0;
   bottom: 0;
-  width: 2px;
+  width: 1px;
   transform: translateX(-50%);
-  background-color: var(--ifm-color-emphasis-300);
+  background-color: var(--iic-hairline);
 }
 
-/* ─── Each row ──────────────────────────────────────────────────── */
-
+/* ─── Each row ────────────────────────────────────────────── */
 .timelineRow {
   position: relative;
   display: flex;
   align-items: flex-start;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
-/* Left-side items: card on the left, node in the center */
 .left {
   justify-content: flex-start;
 }
@@ -73,7 +72,6 @@
   padding-right: 2rem;
 }
 
-/* Right-side items: card on the right, node in the center */
 .right {
   justify-content: flex-end;
 }
@@ -83,38 +81,34 @@
   padding-left: 2rem;
 }
 
-/* ─── Center node ───────────────────────────────────────────────── */
-
+/* Registration-square node */
 .node {
   position: absolute;
   left: 50%;
-  top: 1.2rem;
-  transform: translateX(-50%);
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background-color: var(--ifm-color-primary);
-  border: 3px solid var(--ifm-background-color);
-  box-shadow: 0 0 0 2px var(--ifm-color-primary);
+  top: 1.4rem;
+  transform: translateX(-50%) rotate(45deg);
+  width: 9px;
+  height: 9px;
+  background-color: var(--iic-paper);
+  border: 1px solid var(--ifm-heading-color);
   z-index: 1;
 }
 
-/* ─── Card ──────────────────────────────────────────────────────── */
-
+/* ─── Card: plate entry, square, hairline ─────────────────── */
 .card {
-  background-color: var(--ifm-card-background-color, var(--ifm-background-surface-color));
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 0.75rem;
-  padding: 1.25rem 1.5rem;
+  background-color: transparent;
+  border: 1px solid var(--iic-hairline);
+  border-radius: 0;
+  padding: 1.25rem 1.4rem;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
-  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .card:hover,
 .cardExpanded {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
-  border-color: var(--ifm-color-primary-light);
+  background-color: var(--iic-surface);
+  border-color: var(--ifm-heading-color);
 }
 
 .cardHeader {
@@ -125,40 +119,55 @@
 }
 
 .icon {
-  font-size: 1.1rem;
-  color: var(--ifm-color-primary);
+  font-size: 0.95rem;
+  color: var(--iic-seal);
   flex-shrink: 0;
 }
 
 .title {
   margin: 0;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   color: var(--ifm-heading-color);
+}
+
+.extLink {
+  display: inline-flex;
+  color: var(--iic-ink-mute);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.extLink:hover {
+  color: var(--iic-seal);
 }
 
 .company {
   margin: 0 0 0.15rem;
   font-size: 0.85rem;
   font-weight: 500;
-  color: var(--ifm-color-emphasis-700);
+  color: var(--ifm-font-color-base);
 }
 
 .duration {
   margin: 0 0 0.5rem;
-  font-size: 0.8rem;
-  color: var(--ifm-color-emphasis-600);
+  font-family: var(--iic-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--iic-ink-mute);
 }
 
 .description {
   margin: 0 0 0.5rem;
-  font-size: 0.875rem;
+  font-family: var(--iic-serif);
+  font-size: 0.95rem;
   color: var(--ifm-font-color-base);
-  line-height: 1.5;
+  line-height: 1.65;
 }
 
-/* ─── Achievements (expandable) ─────────────────────────────────── */
-
+/* ─── Achievements (expandable) ───────────────────────────── */
 .achievements {
   overflow: hidden;
 }
@@ -166,15 +175,16 @@
 .achievementsInner {
   padding-top: 0.75rem;
   margin-top: 0.75rem;
-  border-top: 1px solid var(--ifm-color-emphasis-200);
+  border-top: 1px solid var(--iic-hairline);
 }
 
 .achievementsTitle {
-  font-size: 0.8rem;
+  font-family: var(--iic-mono);
+  font-size: 0.68rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--ifm-color-primary);
+  letter-spacing: 0.14em;
+  color: var(--iic-seal);
   margin: 0 0 0.5rem;
 }
 
@@ -189,29 +199,30 @@
   margin-bottom: 0.25rem;
 }
 
-/* ─── Expand hint ───────────────────────────────────────────────── */
-
+/* ─── Expand hint ─────────────────────────────────────────── */
 .expandHint {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
   margin-top: 0.5rem;
-  font-size: 0.75rem;
-  color: var(--ifm-color-primary);
-  text-align: right;
+  font-family: var(--iic-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--iic-seal);
   user-select: none;
 }
 
-/* ─── What I Built ─────────────────────────────────────────────── */
-
+/* ─── What I Built ────────────────────────────────────────── */
 .rightColumn {
   position: sticky;
-  top: 2rem;
-  transition: opacity 0.3s ease, transform 0.4s ease;
+  top: calc(var(--ifm-navbar-height) + 2rem);
 }
 
 .builtList {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  border-top: 1px solid var(--iic-hairline);
 }
 
 .builtCard {
@@ -219,44 +230,43 @@
   flex-direction: row;
   align-items: flex-start;
   gap: 1rem;
-  background-color: var(--ifm-card-background-color, var(--ifm-background-surface-color));
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 0.75rem;
-  padding: 1rem 1.25rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
-  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--iic-hairline);
+  border-radius: 0;
+  padding: 1.25rem 0;
+  box-shadow: none;
+  transition: background-color 0.2s ease;
   overflow: hidden;
 }
 
 .builtCardImage {
   flex-shrink: 0;
-  width: 72px;
-  height: 72px;
-  border-radius: 0.5rem;
+  width: 64px;
+  height: 64px;
+  border-radius: 0;
   object-fit: contain;
-  background-color: var(--ifm-color-emphasis-100);
+  background-color: var(--iic-surface);
+  border: 1px solid var(--iic-hairline);
 }
 
 .builtCardImagePlaceholder {
   flex-shrink: 0;
-  width: 72px;
-  height: 72px;
-  border-radius: 0.5rem;
-  background-color: var(--ifm-color-emphasis-100);
+  width: 64px;
+  height: 64px;
+  border-radius: 0;
+  background-color: var(--iic-surface);
+  border: 1px solid var(--iic-hairline);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
+  color: var(--iic-ink-mute);
 }
 
 .builtCardBody {
   flex: 1;
   min-width: 0;
-}
-
-.builtCard:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
-  border-color: var(--ifm-color-primary-light);
 }
 
 .builtCardHeader {
@@ -269,27 +279,26 @@
 .builtTitle {
   margin: 0;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   color: var(--ifm-heading-color);
-}
-
-.builtUrl {
-  font-size: 0.9rem;
-  text-decoration: none;
-  flex-shrink: 0;
 }
 
 .builtDuration {
   margin: 0 0 0.5rem;
-  font-size: 0.8rem;
-  color: var(--ifm-color-emphasis-600);
+  font-family: var(--iic-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--iic-ink-mute);
 }
 
 .builtDescription {
   margin: 0 0 0.5rem;
-  font-size: 0.875rem;
+  font-family: var(--iic-serif);
+  font-size: 0.95rem;
   color: var(--ifm-font-color-base);
-  line-height: 1.5;
+  line-height: 1.65;
 }
 
 .builtAchievements {
@@ -303,14 +312,8 @@
   margin-bottom: 0.25rem;
 }
 
-/* ─── Responsive ────────────────────────────────────────────────── */
-
+/* ─── Responsive ──────────────────────────────────────────── */
 @media screen and (max-width: 1280px) {
-  .container {
-    padding: 4rem 6rem;
-    transition: 0.3s all ease;
-  }
-
   .leftColumn {
     padding-right: 2rem;
   }
@@ -318,28 +321,22 @@
   .rightColumnInner {
     padding-left: 2rem;
   }
-
 }
 
 @media (max-width: 996px) {
-  .container {
-    padding: 0 6rem;
-  }
-
   .twoColumnGrid {
     grid-template-columns: 1fr;
   }
-
   .leftColumn {
     padding-right: 1rem;
     border-right: none;
-    border-bottom: 1px solid var(--ifm-color-emphasis-200);
+    border-bottom: 1px solid var(--iic-hairline);
     padding-bottom: 2.5rem;
     margin-bottom: 0.5rem;
   }
 
   .rightColumnInner {
-    padding-left: 0rem;
+    padding-left: 0;
   }
 
   .rightColumn {
@@ -348,17 +345,12 @@
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding: 0 2rem;
-  }
-
   .rightColumn {
     padding-top: 1rem;
   }
 
-  /* Collapse timeline to single-column on mobile */
   .line {
-    left: 10px;
+    left: 6px;
   }
 
   .timelineRow {
@@ -366,13 +358,13 @@
   }
 
   .node {
-    left: 10px;
-    transform: none;
+    left: 6px;
+    transform: translateX(-50%) rotate(45deg);
   }
 
   .left .cardWrapper,
   .right .cardWrapper {
-    width: calc(100% - 32px);
+    width: calc(100% - 28px);
     padding-left: 1.5rem;
     padding-right: 0;
   }

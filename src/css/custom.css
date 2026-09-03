@@ -1,35 +1,416 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Immersed in Code — "printed technical quarterly" plate system.
+ * Restrained strategy (Read mode): paper ground, ink, hairlines,
+ * one periwinkle seal. No gradients-as-decoration, no glass, no kicker labels.
  */
 
-/* You can override the default Infima variables here. */
+/* ─── Tokens ─────────────────────────────────────────────── */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --iic-paper: #f4f2ee;
+  --iic-paper-warm: #faf6ef;
+  --iic-paper-cool: #edf1ea;
+  --iic-surface: #ebe8e1;
+  --iic-ink: #17191c;
+  --iic-ink-soft: #2b2e33;
+  --iic-ink-mute: #5c6067;
+  --iic-hairline: #c8c4b9;
+  --iic-seal: #3a3fc0;
+  --iic-seal-deep: #2b2f96;
+  --iic-seal-wash: #dcdcF3;
+  --iic-grot: 'Archivo', 'Helvetica Neue', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --iic-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --iic-mono: ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace;
+
+  --ifm-font-family-base: var(--iic-grot);
+  --ifm-heading-font-family: var(--iic-grot);
+  --ifm-font-family-monospace: var(--iic-mono);
+  --ifm-global-radius: 0;
+  --ifm-button-border-radius: 0;
+  --ifm-code-border-radius: 0;
+  --ifm-navbar-height: 72px;
+
+  --ifm-color-primary: #3a3fc0;
+  --ifm-color-primary-dark: #3338ad;
+  --ifm-color-primary-darker: #2f339e;
+  --ifm-color-primary-darkest: #272a82;
+  --ifm-color-primary-light: #4a4fd0;
+  --ifm-color-primary-lighter: #5b60d8;
+  --ifm-color-primary-lightest: #767be4;
+  --ifm-link-color: var(--ifm-color-primary);
+  --ifm-code-font-size: 0.9em;
+
+  --ifm-background-color: var(--iic-paper);
+  --ifm-background-surface-color: var(--iic-surface);
+  --ifm-heading-color: var(--iic-ink);
+  --ifm-font-color-base: var(--iic-ink-soft);
+  --ifm-hr-background-color: var(--iic-hairline);
+  --docusaurus-highlighted-code-line-bg: rgba(58, 63, 192, 0.1);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --iic-paper: #14161a;
+  --iic-paper-warm: #191b20;
+  --iic-paper-cool: #101418;
+  --iic-surface: #1c1f25;
+  --iic-ink: #ece9e1;
+  --iic-ink-soft: #d6d2c7;
+  --iic-ink-mute: #a3a099;
+  --iic-hairline: #2e333b;
+  --iic-seal: #b7bcff;
+  --iic-seal-deep: #d4d7ff;
+  --iic-seal-wash: #262a55;
+
+  --ifm-color-primary: #b7bcff;
+  --ifm-color-primary-dark: #a3a9ff;
+  --ifm-color-primary-darker: #9399f5;
+  --ifm-color-primary-darkest: #7c82e8;
+  --ifm-color-primary-light: #c6caff;
+  --ifm-color-primary-lighter: #d4d7ff;
+  --ifm-color-primary-lightest: #e4e6ff;
+  --ifm-background-color: var(--iic-paper);
+  --ifm-background-surface-color: var(--iic-surface);
+  --ifm-heading-color: var(--iic-ink);
+  --ifm-font-color-base: var(--iic-ink-soft);
+  --docusaurus-highlighted-code-line-bg: rgba(183, 188, 255, 0.12);
 }
 
-img[src*='#center'] { 
+/* ─── Ground: paper that drifts warm / cool at the edges ─── */
+body {
+  background-color: var(--iic-paper);
+  background-image:
+    radial-gradient(1100px 500px at 8% -4%, var(--iic-paper-warm), transparent 70%),
+    radial-gradient(1000px 520px at 96% 4%, var(--iic-paper-cool), transparent 70%);
+  background-attachment: fixed;
+  font-feature-settings: 'ss01';
+}
+
+::selection {
+  background: var(--iic-seal);
+  color: var(--iic-paper);
+}
+
+/* ─── Browser surfaces carry the design too ──────────────── */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--iic-paper);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--iic-hairline);
+  border: 2px solid var(--iic-paper);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--iic-ink-mute);
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--iic-hairline) var(--iic-paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--iic-seal);
+  outline-offset: 2px;
+}
+
+input {
+  caret-color: var(--iic-seal);
+}
+u, ins {
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+}
+
+/* ─── Sticky mono token bar (navbar) ─────────────────────── */
+.navbar {
+  height: var(--ifm-navbar-height);
+  background-color: var(--iic-paper);
+  border-bottom: 1px solid var(--iic-hairline);
+  box-shadow: none;
+  padding: 0 2rem;
+}
+.navbar__title {
+  font-family: var(--iic-grot);
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+.navbar__link,
+.navbar__item {
+  font-family: var(--iic-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+.navbar__link--active {
+  color: var(--ifm-heading-color);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+}
+.navbar-sidebar {
+  background-color: var(--iic-paper);
+}
+
+/* ─── Buttons: filled ink rect / 1px outline rect ────────── */
+.button {
+  border-radius: 0;
+  font-family: var(--iic-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border: 1px solid var(--ifm-heading-color);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.button--primary,
+.button--secondary {
+  background-color: var(--ifm-heading-color);
+  color: var(--iic-paper);
+}
+.button--primary:hover,
+.button--secondary:hover {
+  background-color: var(--iic-seal);
+  border-color: var(--iic-seal);
+  color: #fff;
+}
+[data-theme='dark'] .button--primary:hover,
+[data-theme='dark'] .button--secondary:hover {
+  color: #14161a;
+}
+.button--outline {
+  background-color: transparent;
+  color: var(--ifm-heading-color);
+}
+.button--outline:hover {
+  background-color: var(--ifm-heading-color);
+  color: var(--iic-paper);
+}
+
+/* ─── Footer: colophon on ink ────────────────────────────── */
+.footer {
+  background-color: var(--iic-ink);
+  color: var(--iic-paper);
+  border-top: 1px solid var(--iic-hairline);
+  --ifm-footer-link-color: var(--iic-paper);
+  --ifm-footer-link-hover-color: var(--iic-seal-wash);
+  --ifm-footer-title-color: var(--iic-paper);
+  --ifm-footer-link-horizontal-spacing: 0;
+}
+[data-theme='dark'] .footer {
+  background-color: #0c0e11;
+  color: var(--iic-ink);
+  --ifm-footer-link-color: var(--iic-ink);
+  --ifm-footer-link-hover-color: var(--iic-seal);
+  --ifm-footer-title-color: var(--iic-ink);
+}
+.footer__title {
+  font-family: var(--iic-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+.footer__link-item {
+  font-size: 0.92rem;
+}
+.footer__copyright {
+  font-family: var(--iic-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  opacity: 0.75;
+}
+
+/* ─── Reading surface (blog posts, docs, about) ──────────── */
+.markdown {
+  --ifm-h1-font-size: 2.5rem;
+  --ifm-h2-font-size: 1.75rem;
+  --ifm-h3-font-size: 1.35rem;
+  --ifm-heading-line-height: 1.15;
+}
+.markdown > p,
+.markdown > ul,
+.markdown > ol {
+  font-family: var(--iic-serif);
+  font-size: 1.075rem;
+  line-height: 1.78;
+  max-width: 68ch;
+}
+.markdown > p:first-child::first-letter {
+  font-family: var(--iic-grot);
+  font-weight: 800;
+  font-size: 3.4em;
+  line-height: 0.85;
+  float: left;
+  padding-right: 0.12em;
+  padding-top: 0.05em;
+}
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4 {
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  max-width: 68ch;
+}
+.markdown h2 {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--iic-hairline);
+}
+
+/* Plain MDX pages (src/pages/*.md) render with no .markdown wrapper */
+[class*='mdxPageWrapper'] article > p,
+[class*='mdxPageWrapper'] article > ul,
+[class*='mdxPageWrapper'] article > ol {
+  font-family: var(--iic-serif);
+  font-size: 1.075rem;
+  line-height: 1.78;
+  max-width: 68ch;
+}
+[class*='mdxPageWrapper'] article > p:first-of-type::first-letter {
+  font-family: var(--iic-grot);
+  font-weight: 800;
+  font-size: 3.4em;
+  line-height: 0.85;
+  float: left;
+  padding-right: 0.12em;
+  padding-top: 0.05em;
+}
+[class*='mdxPageWrapper'] article h1,
+[class*='mdxPageWrapper'] article h2 {
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  max-width: 68ch;
+}
+.markdown blockquote {
+  border-left: 1px solid var(--iic-seal);
+  background: transparent;
+  font-family: var(--iic-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--ifm-heading-color);
+  padding: 0.25rem 0 0.25rem 1.25rem;
+}
+.markdown hr {
+  border: 0;
+  border-top: 1px solid var(--iic-hairline);
+  margin: 3rem 0;
+}
+.markdown table {
+  font-size: 0.92rem;
+}
+.markdown table thead th {
+  font-family: var(--iic-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border-bottom: 1px solid var(--ifm-heading-color);
+}
+.markdown table th,
+.markdown table td {
+  border: 1px solid var(--iic-hairline);
+}
+.markdown code {
+  font-variant-ligatures: none;
+}
+div[class*='codeBlockContainer'] {
+  border: 1px solid var(--iic-hairline);
+  border-radius: 0;
+  box-shadow: none;
+}
+div[class*='codeBlockTitle'] {
+  font-family: var(--iic-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border-bottom: 1px solid var(--iic-hairline);
+  border-radius: 0;
+}
+
+/* Blog list + post chrome */
+article[itemprop='blogPost'] {
+  border-bottom: 1px solid var(--iic-hairline);
+  padding-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+h2[class*='title'] a,
+a[class*='blogPostTitle'] {
+  letter-spacing: -0.02em;
+}
+/* List headlines stay ink; seal is reserved for small tokens */
+header h2[class*='title'] > a {
+  color: var(--ifm-heading-color);
+}
+header h2[class*='title'] > a:hover {
+  color: var(--iic-seal);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.14em;
+}
+.pagination-nav {
+  border-top: 1px solid var(--iic-hairline);
+  padding-top: 1.5rem;
+}
+.pagination-nav__link {
+  border: 1px solid var(--iic-hairline);
+  border-radius: 0;
+}
+.pagination-nav__label {
+  font-family: var(--iic-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+.pagination-nav__link:hover {
+  border-color: var(--ifm-heading-color);
+}
+ul.table-of-contents {
+  font-size: 0.85rem;
+}
+.breadcrumbs__link {
+  font-family: var(--iic-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* Tags + search carry the mono-token language */
+[class*='tagList'] a,
+a[class*='tag'] {
+  border-radius: 0;
+  font-family: var(--iic-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  border: 1px solid var(--iic-hairline);
+}
+input[class*='searchInput'],
+.navbar__search-input {
+  border-radius: 0;
+  font-family: var(--iic-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+}
+
+/* Dot-matrix void filler for quiet bands */
+.iic-dots {
+  height: 12px;
+  background-image: radial-gradient(var(--iic-hairline) 1px, transparent 1.4px);
+  background-size: 8px 8px;
+  opacity: 0.9;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+img[src*='#center'] {
   display: block;
   margin: auto;
 }

@@ -1,0 +1,62 @@
+.stamp {
+  position: relative;
+  display: inline-flex;
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.stamp:hover {
+  transform: translateY(-4px);
+}
+
+.disc {
+  fill: var(--iic-seal-wash);
+  stroke: var(--iic-seal);
+  stroke-width: 1;
+}
+
+.inner {
+  fill: none;
+  stroke: var(--iic-seal);
+  stroke-width: 1;
+  stroke-dasharray: 2 3;
+}
+
+.ring {
+  width: 100%;
+  height: 100%;
+  animation: iic-spin 25s linear infinite;
+}
+
+.ringText {
+  font-family: var(--iic-mono);
+  font-size: 10.2px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  fill: var(--iic-seal-deep);
+}
+
+[data-theme='dark'] .ringText {
+  fill: var(--iic-seal);
+}
+
+.nib {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 26px;
+  height: 26px;
+  color: var(--iic-seal-deep);
+}
+
+[data-theme='dark'] .nib {
+  color: var(--iic-seal);
+}
+
+@keyframes iic-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,64 +1,162 @@
-.card {
-  padding: 0;
-  overflow: hidden;
-  /* max-width: 500px; */
-  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
-  box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 2px 4px;
-  cursor: pointer;
+/* ─── Lead plate: the one inversion on the sheet ─── */
+.lead {
+  background-color: var(--iic-ink);
+  color: var(--iic-paper);
+  padding: clamp(2rem, 5vw, 4rem);
   position: relative;
-  border-radius: 5px;
+  overflow: hidden;
 }
 
-html[data-theme='dark'] .card {
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 0px 0px 1px, rgba(255, 255, 255, 0.1) 0px 2px 4px;
+.leadFolio {
+  font-family: var(--iic-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  opacity: 0.72;
+  display: flex;
+  gap: 0.75rem;
+  margin: 0 0 1.25rem;
+}
+
+.leadTitle {
+  font-size: clamp(1.9rem, 4.2vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 0 0 1.25rem;
+  max-width: 22ch;
+  text-wrap: balance;
+  color: var(--iic-paper);
+}
+
+.leadLink {
+  color: inherit;
+}
+.leadLink:hover {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 2px;
+}
+
+.leadDesc {
+  font-family: var(--iic-serif);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 58ch;
+  opacity: 0.85;
+  margin: 0 0 2rem;
+}
+
+.leadCta {
+  border-color: var(--iic-paper);
+  color: var(--iic-paper);
+}
+.leadCta:hover {
+  background-color: var(--iic-paper);
+  border-color: var(--iic-paper);
+  color: var(--iic-ink);
+  text-decoration: none;
+}
+
+/* ─── Plates: hairline grid, registration corners ─── */
+.plate {
+  position: relative;
+  padding: 1.5rem 1.5rem 2rem 0;
+  border-top: 1px solid var(--iic-hairline);
+  transition: background-color 0.2s ease;
+}
+
+.plate::before,
+.plate::after {
+  content: '+';
+  position: absolute;
+  font-family: var(--iic-mono);
+  font-size: 0.8rem;
+  color: var(--iic-ink-mute);
+  line-height: 1;
+}
+
+.plate::before {
+  top: 0.45rem;
+  left: 0;
+}
+
+.plate::after {
+  top: 0.45rem;
+  right: 0.75rem;
+}
+
+.plate:hover .title {
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+  text-decoration-thickness: 2px;
 }
 
 .permalink {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   z-index: 10;
-  -webkit-user-select: none;
 }
 
-.thumbnail {
-  width: 100%;
+.fig {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: var(--iic-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--iic-ink-mute);
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+  padding-right: 1.75rem;
 }
 
-.thumbnail > img {
+.figDate {
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.thumb {
+  border: 1px solid var(--iic-hairline);
+  margin-bottom: 1.1rem;
+  overflow: hidden;
+}
+
+.thumb > img {
+  display: block;
   width: 100%;
-  height: 192px;
+  height: 190px;
   object-fit: cover;
   object-position: center 50%;
 }
 
 .title {
-  overflow: hidden;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  margin: 0 0 0.6rem;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  margin: 0;
-  padding-bottom: 1px;
+  overflow: hidden;
+  text-wrap: balance;
 }
 
-/* .description {
-  overflow: hidden;
+.desc {
+  font-family: var(--iic-serif);
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--ifm-font-color-base);
+  margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  font-size: 14px;
-} */
-
-.date {
-  text-align: start;
-  font-size: 13px;
-  color: rgba(0, 0, 0, 0.7);
-  margin-bottom: 10px;
-  transition: 0.15s;
-}
-
-html[data-theme='dark'] .date {
-  color: rgba(255, 255, 255, 0.7);
+  overflow: hidden;
 }
