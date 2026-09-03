@@ -21,12 +21,11 @@
 .sectionIntro { display: flex; justify-content: space-between; align-items: end; gap: 2rem; border-bottom: 1px solid var(--notebook-rule); margin-bottom: 2rem; padding-bottom: 1.25rem; }
 .sectionIntro h2 { margin: 0; color: var(--notebook-ink); font: 500 clamp(2.2rem, 4vw, 4rem)/1 Georgia, serif; letter-spacing: -.04em; }
 .sectionDescription { color: var(--notebook-muted); max-width: 340px; margin: 0 0 .2rem; line-height: 1.55; }
-.recentBlogsList { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.recentBlogsList { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
 .viewAll { margin-top: 2rem; text-align: right; }
 .viewAll a { display: inline-flex; gap: 1rem; color: var(--notebook-blue); font-weight: 700; }
 .topTagsList { display: inline; }
 @media (min-width: 641px) { .recentBlogsContainer { border-bottom: 1px solid var(--notebook-rule); } }
-@media screen and (max-width: 1280px) { .recentBlogsList { grid-template-columns: repeat(3, minmax(200px, 1fr)); } }
 @media screen and (max-width: 1024px) { .recentBlogsList { grid-template-columns: repeat(2, minmax(200px, 1fr)); } }
 @media screen and (max-width: 640px) {
   .heroInner { min-height: 700px; grid-template-columns: 1fr; gap: 1rem; }
