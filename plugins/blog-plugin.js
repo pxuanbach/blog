@@ -17,7 +17,7 @@ async function blogPluginExtended(...pluginArgs) {
       const { content, actions } = params;
 
       // Get the 4 latest blog posts
-      const recentPostsLimit = 4;
+      const recentPostsLimit = 3;
       const recentPosts = [...content.blogPosts].splice(0, recentPostsLimit);
 
       const blogTagsLimit = 12;
