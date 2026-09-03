@@ -6,28 +6,50 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --notebook-paper: #f4f0e8;
+  --notebook-surface: #fbfaf6;
+  --notebook-ink: #172b3a;
+  --notebook-hero: #172b3a;
+  --notebook-muted: #60717b;
+  --notebook-coral: #ef6f51;
+  --notebook-blue: #2364aa;
+  --notebook-rule: #d8d1c5;
+  --ifm-color-primary: #2364aa;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-background-color: var(--notebook-paper);
+  --ifm-background-surface-color: var(--notebook-surface);
+  --ifm-font-family-base: 'Trebuchet MS', system-ui, sans-serif;
+  --ifm-heading-font-family: Georgia, serif;
+  --ifm-heading-color: var(--notebook-ink);
+  --ifm-font-color-base: var(--notebook-ink);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --notebook-paper: #101b24;
+  --notebook-surface: #172630;
+  --notebook-ink: #f4f0e8;
+  --notebook-hero: #0b151d;
+  --notebook-muted: #a5b2b6;
+  --notebook-rule: #30424b;
+  --ifm-color-primary: #ef8a70;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+html { background: var(--notebook-paper); }
+body { background: var(--notebook-paper); }
+::selection { background: var(--notebook-coral); color: white; }
+:focus-visible { outline: 3px solid var(--notebook-coral); outline-offset: 4px; }
+.navbar { background: var(--notebook-paper); border-bottom: 1px solid var(--notebook-rule); box-shadow: none; }
+.navbar__title, .navbar__link { color: var(--notebook-ink); }
+.navbar__link:hover { color: var(--notebook-coral); }
+.footer.footer--dark { background: var(--notebook-hero); color: #f4f0e8; }
+.footer.footer--dark .footer__title,
+.footer.footer--dark .footer__link-item,
+.footer.footer--dark .footer__copyright,
+.footer.footer--dark .footer__item p { color: #f4f0e8; }
+.footer.footer--dark .footer__link-item:hover { color: var(--notebook-coral); }
 
 img[src*='#center'] { 
   display: block;

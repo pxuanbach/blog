@@ -2,7 +2,8 @@ export type TimelineItemType =
     | "work"
     | "education"
     | "certification"
-    | "achievement";
+    | "achievement"
+    | "personal_project";
 
 export interface TimelineItem {
     id: number;
