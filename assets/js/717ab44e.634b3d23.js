@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkme||=[]).push([[3840],{8334(t){t.exports=JSON.parse('{"blogTitle":"My Awesome Blog","blogDescription":"A great blog with homepage Docusaurus integration","totalPosts":13,"totalRecentPosts":3}')}}]);

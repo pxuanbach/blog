@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkme||=[]).push([[9989],{1485(a){a.exports=JSON.parse('{"label":"fastapi","total":6,"permalink":"/blog/tags/fastapi","unlisted":false}')}}]);
