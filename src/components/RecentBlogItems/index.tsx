@@ -1,9 +1,10 @@
+import React from "react";
 import clsx from "clsx";
 import styles from './index.module.css';
 import dayjs from "dayjs";
 import Link from '@docusaurus/Link';
 
-export function RecentBlogItems({ index, metadata, context }): JSX.Element {
+export function RecentBlogItems({ index, metadata, context }): React.ReactElement {
   const formatDate = (date?: string) => {
     if (!date) {
       return dayjs().format('MMMM DD, YYYY');

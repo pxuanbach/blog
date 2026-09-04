@@ -1,30 +1,5 @@
-.badge {
-  padding: 0.25rem;
-  width: fit-content;
-  cursor: pointer;
-  margin: 0 0.2rem 0.5rem 0;
-  display: inline-block;
-}
-
-.permalink {
-  border-radius: var(--ifm-global-radius);
-  padding: 0.2rem 0.5rem 0.3rem;
-  font-size: 90%;
-  border: 1px solid var(--docusaurus-tag-list-border);
-  text-wrap: nowrap;
-}
-
-.permalink:hover {
-  text-decoration: none;
-  border: 1px solid var(--ifm-color-primary-darker);
-}
-
-.permalink span {
-  background: var(--ifm-color-secondary);
-  color: var(--ifm-color-black);
-  font-size: 0.7rem;
-  line-height: 1.2;
-  border-radius: var(--ifm-global-radius);
-  padding: 0.1rem 0.4rem;
-  margin-left: 0.3rem;
-}
+.badge { display: inline-block; width: fit-content; margin: 0 .55rem .7rem 0; }
+.permalink { display: inline-flex; align-items: center; gap: .6rem; padding: .62rem .85rem; color: var(--ifm-heading-color); font-size: .9rem; font-weight: 650; border: 1px solid rgba(29, 36, 33, .2); border-radius: 8px; transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease; }
+.permalink:hover { color: #fffaf2; text-decoration: none; background: var(--ifm-color-primary); border-color: var(--ifm-color-primary); transform: translateY(-2px); }
+.permalink span { color: var(--ifm-color-primary); font: 700 .72rem ui-monospace, SFMono-Regular, Menlo, monospace; }
+.permalink:hover span { color: #fffaf2; }

@@ -2,7 +2,8 @@ export type TimelineItemType =
     | "work"
     | "education"
     | "certification"
-    | "achievement";
+    | "achievement"
+    | "personal_project";
 
 export interface TimelineItem {
     id: number;
@@ -95,7 +96,7 @@ export const builtData: BuiltItem[] = [
     {
         id: 100,
         title: "Immersed in Code Blog",
-        url: "#",
+        url: "/blog",
         imageUrl: "img/logo.png",
         duration: "Released in 05/2024",
         description:

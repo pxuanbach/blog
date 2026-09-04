@@ -1,136 +1,25 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
-.heroBanner {
-  flex: 1 auto;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(../../../static/img/banner_bg_2k.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100vw 90vh;
-  min-height: 52vh;
-}
-
-html[data-theme='dark'] .heroBanner {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url(../../../static/img/banner_bg_2k.jpg);
-}
-
-.heroTitle {
-  font-size: 3rem;
-}
-
-html[data-theme='dark'] .heroTitle {
-  text-shadow: 2px -2px 28px rgba(255, 255, 255, 1);
-  /* box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; */
-}
-
-.buttons {
-  margin: 0 auto;
-  width: fit-content;
-}
-
-.buttons a {
-  transition: 0.15s all ease-in;
-}
-
-.viewAll {
-  margin-top: 2rem;
-  text-align: center;
-  transition: 0.15s all ease-out;
-}
-
-html[data-theme='dark'] .buttons a {
-  background-color: var(--ifm-color-primary);
-  color: var(--ifm-color-secondary-light);
-  border: none;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-  transition: 0.15s all ease-out;
-}
-
-html[data-theme='dark'] .buttons a:hover {
-  background-color: var(--ifm-color-primary-dark);
-}
-
-.recentBlogsContainer {
-  flex: 1 auto;
-  padding: 3rem 14rem 4rem;
-  transition: 0.3s all ease;
-}
-
-.recentBlogsList {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(200px, 500px));
-  grid-gap: 1rem;
-  transition: 0.3s all ease;
-}
-
-/* ----------------------------- */
-
-.topTagsContainer {
-  flex: 1 auto;
-  padding: 1rem 14rem 6rem;
-  transition: 0.3s all ease;
-}
-
-.topTagsList {
-  display: inline;
-  transition: 0.3s all ease;
-}
-
-/* ----------------------------- */
-
-@media screen and (max-width: 1536px) {
-  .recentBlogsList {
-    transition: 0.3s all ease;
-    grid-gap: 1rem;
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .recentBlogsContainer {
-    padding: 4rem 6rem;
-  }
-
-  .topTagsContainer {
-    padding: 1rem 6rem 4rem;
-  }
-
-  .recentBlogsList {
-    grid-template-columns: repeat(3, minmax(200px, 500px));
-    transition: 0.3s all ease;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .recentBlogsList {
-    grid-template-columns: auto auto;
-    transition: 0.5s all ease-out;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .recentBlogsContainer {
-    padding: 3rem 2rem;
-    transition: 0.3s all ease;
-  }
-
-  .topTagsContainer {
-    padding: 1rem 2rem 3rem;
-  }
-
-  .recentBlogsList {
-    grid-template-columns: repeat(2, minmax(200px, 500px));
-    transition: 0.5s all ease-out;
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .recentBlogsList {
-    grid-template-columns: repeat(1, minmax(200px, auto));
-    transition: 0.5s all ease-out;
-  }
-}
+.heroBanner { position: relative; min-height: 72vh; display: flex; align-items: center; overflow: hidden; color: #f7f3eb; background: linear-gradient(90deg, rgba(20, 27, 24, .92) 0%, rgba(20, 27, 24, .72) 52%, rgba(20, 27, 24, .3) 100%), url('/img/banner_bg_2k.jpg') center / cover; }
+.heroBanner::after { content: ''; position: absolute; inset: 0; opacity: .22; pointer-events: none; background-image: radial-gradient(rgba(255,255,255,.4) .7px, transparent .7px); background-size: 5px 5px; mix-blend-mode: soft-light; }
+.heroInner { position: relative; z-index: 1; width: min(100% - 3rem, 1180px); margin: 0 auto; padding: 8rem 0 7rem; }
+.eyebrow { margin: 0 0 1.1rem; color: var(--ifm-color-primary); font: 700 .75rem/1.2 var(--ifm-font-family-base); letter-spacing: .14em; text-transform: uppercase; }
+.heroBanner .eyebrow { color: #f2a092; }
+.heroTitle { max-width: 780px; margin: 0; color: #fffaf2; font-size: clamp(4rem, 10vw, 8rem); line-height: .88; text-wrap: balance; }
+.heroSubtitle { max-width: 510px; margin: 2rem 0 2.5rem; color: rgba(255,250,242,.82); font-size: clamp(1.05rem, 2vw, 1.3rem); }
+.buttons { display: flex; align-items: center; gap: 1.75rem; }
+.buttons a:first-child { box-shadow: 0 12px 30px rgba(11, 17, 14, .28); }
+.secondaryLink { color: #fffaf2; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,.55); padding-bottom: .25rem; }
+.secondaryLink:hover { color: #f2a092; text-decoration: none; border-color: #f2a092; }
+.heroIndex { position: absolute; right: 2.5rem; bottom: 2.5rem; z-index: 1; color: rgba(255,250,242,.65); font: 600 .72rem/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .12em; }
+.recentBlogsContainer, .topTagsContainer { width: min(100% - 3rem, 1180px); margin: 0 auto; }
+.recentBlogsContainer { padding: 8rem 0 7rem; }
+.sectionIntro { display: grid; grid-template-columns: minmax(200px, 1fr) 2fr; align-items: end; column-gap: 2rem; margin-bottom: 2.5rem; }
+.sectionIntro .eyebrow { grid-column: 1 / -1; }
+.sectionIntro h2 { margin: 0; font-size: clamp(2.4rem, 5vw, 4.3rem); line-height: .95; }
+.sectionIntro > p:last-child { margin: 0; max-width: 32ch; color: var(--ifm-color-emphasis-700); }
+.recentBlogsList { display: grid; grid-template-columns: 1.22fr 1fr 1fr 1fr; gap: 1rem; align-items: start; }
+.viewAll { display: inline-block; margin-top: 2.5rem; color: var(--ifm-heading-color); font-weight: 700; border-bottom: 1px solid var(--ifm-color-primary); }
+.viewAll:hover { color: var(--ifm-color-primary); text-decoration: none; }
+.topTagsContainer { padding: 7rem 0 9rem; }
+.topTagsList { max-width: 850px; }
+@media (max-width: 900px) { .recentBlogsList { grid-template-columns: repeat(2, 1fr); } .sectionIntro { grid-template-columns: 1fr; gap: 1rem; } }
+@media (max-width: 640px) { .heroInner { padding: 7rem 0 8rem; } .heroTitle { font-size: clamp(3.4rem, 18vw, 5rem); } .buttons { align-items: flex-start; flex-direction: column; gap: 1.25rem; } .recentBlogsContainer, .topTagsContainer { width: min(100% - 2rem, 1180px); } .recentBlogsContainer { padding: 5rem 0; } .recentBlogsList { grid-template-columns: 1fr; } .topTagsContainer { padding: 5rem 0 6rem; } .heroIndex { right: 1rem; bottom: 1.25rem; } }

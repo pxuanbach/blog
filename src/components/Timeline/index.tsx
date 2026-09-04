@@ -61,7 +61,7 @@ function TimelineCard({
       <div className={styles.node} />
 
       {/* Card */}
-      <div className={styles.cardWrapper} onClick={onToggle}>
+      <div className={styles.cardWrapper} onClick={onToggle} role="button" tabIndex={0} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); onToggle(); } }}>
         <div
           className={`${styles.card} ${isExpanded ? styles.cardExpanded : ""}`}
         >
@@ -177,7 +177,7 @@ const BuiltCard = React.memo(function BuiltCard({
   );
 });
 
-export function JourneyTimeline(): JSX.Element {
+export function JourneyTimeline(): React.ReactElement {
   const [expandedId, setExpandedId] = useState<number | null>(null);
 
   const toggle = (id: number) =>
